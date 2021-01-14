@@ -5,7 +5,11 @@ describe('Test Mode', () => {
 
     it('should show Test mode content', () => {
         cy.visit('https://www.quizlet.com/415/test');
-        
+
+    });
+
+    it('shoutd enter 3 correct, 1 incorrect, and ignore 1 answer', () => {
+
     });
 
 });
