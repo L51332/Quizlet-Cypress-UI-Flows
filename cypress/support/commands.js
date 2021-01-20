@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+cypress.commands.add("getDefinitionFromTerm", (fixture, term) =>{
+    cy.log("invoking getDefinitionFromTerm term = ", term);
+    const definitionToFind = fixture.find(t => t.term === term);
+    if (definitionToFind) return t.definition;
+    throw new Error(`Unable to find term ${term}`);
+});
+
+cypress.commands.add("getTermFromDefinition", (fixture, term) => {
+    cy.log("invoking getTermFromDefinition")
+});
